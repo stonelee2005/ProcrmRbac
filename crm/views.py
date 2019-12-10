@@ -77,7 +77,8 @@ class CustomerList(View):
 
         #分页保留搜索条件
         print(request.GET.urlencode())
-        query_params = copy.deepcopy(request.GET)
+        # query_params = copy.deepcopy(request.GET)
+        query_params = request.GET.copy()
         #_mutable改为True，就可以修改URL
         # query_params._mutable = True
         # query_params['page']=1

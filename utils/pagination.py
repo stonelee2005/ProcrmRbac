@@ -6,7 +6,9 @@ class Pagination:
     def __init__(self,request,all_count,query_params=QueryDict(),max_show=11,per_num=10):
         # 查询条件 query=stone&page=1
         self.query_params=query_params
+        self.query_params._mutable = True
         self.base_url=request.path_info
+
         try:
             # 获取当前的页码
             self.current_page = int(request.GET.get('page', 1))
