@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/crm/views.py" line="202" />
+    <bookmark url="file://$PROJECT_DIR$/crm/views.py" line="212" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45d03062-7d8a-4171-9dfb-8bb4cc4b8cc7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/acd5e08e-8a61-4033-a527-09704834c715.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crm/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/crm/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/pagination.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/pagination.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,26 +57,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crm/urls.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/crm/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+            <state relative-caret-position="373">
+              <caret line="95" column="43" lean-forward="true" selection-start-line="95" selection-start-column="43" selection-end-line="95" selection-end-column="43" />
               <folding>
-                <element signature="e#627#659#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/crm/views.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/pagination.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="72" column="16" lean-forward="true" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
+            <state relative-caret-position="60">
+              <caret line="79" column="61" lean-forward="true" selection-start-line="79" selection-start-column="61" selection-end-line="79" selection-end-column="61" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#0#45#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python38/Lib/site-packages/django/http/request.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="349">
+              <caret line="518" column="17" selection-start-line="518" selection-start-column="8" selection-end-line="518" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -185,6 +194,8 @@
       <find>ima</find>
       <find>image</find>
       <find>i</find>
+      <find>page</find>
+      <find>urlenode</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -213,7 +224,6 @@
         <option value="$PROJECT_DIR$/Procrm/settings.py" />
         <option value="$PROJECT_DIR$/crm/models.py" />
         <option value="$PROJECT_DIR$/templates/user_list.html" />
-        <option value="$PROJECT_DIR$/utils/pagination.py" />
         <option value="$PROJECT_DIR$/Procrm/urls.py" />
         <option value="$PROJECT_DIR$/templates/crm/add_customer_nbcrm.html" />
         <option value="$PROJECT_DIR$/templates/crm/add_customer_bak.html" />
@@ -225,6 +235,7 @@
         <option value="$PROJECT_DIR$/crm/urls.py" />
         <option value="$PROJECT_DIR$/templates/crm/customer_list.html" />
         <option value="$PROJECT_DIR$/crm/views.py" />
+        <option value="$PROJECT_DIR$/utils/pagination.py" />
       </list>
     </option>
   </component>
@@ -249,7 +260,17 @@
             <path>
               <item name="Procrm" type="b2602c69:ProjectViewProjectNode" />
               <item name="Procrm" type="462c0819:PsiDirectoryNode" />
+              <item name="crm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Procrm" type="b2602c69:ProjectViewProjectNode" />
               <item name="Procrm" type="462c0819:PsiDirectoryNode" />
+              <item name="Procrm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Procrm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Procrm" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -264,7 +285,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/crm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -390,7 +411,8 @@
       <workItem from="1575644213982" duration="2006000" />
       <workItem from="1575809130182" duration="2950000" />
       <workItem from="1575889992876" duration="12192000" />
-      <workItem from="1575930795412" duration="243000" />
+      <workItem from="1575930795412" duration="331000" />
+      <workItem from="1575980644500" duration="2514000" />
     </task>
     <task id="LOCAL-00001" summary="ProCRM">
       <created>1575930988350</created>
@@ -399,16 +421,23 @@
       <option name="project" value="LOCAL" />
       <updated>1575930988350</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ProCRM">
+      <created>1575931105278</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575931105278</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85416000" />
+    <option name="totallyTimeSpent" value="88018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1375" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08704293" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08744038" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -444,13 +473,6 @@
     <SUITE FILE_PATH="coverage/Procrm$test.coverage" NAME="test Coverage Results" MODIFIED="1575090304437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Procrm" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/crm/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python38/Lib/site-packages/django/db/models/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-468">
@@ -669,13 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/pagination.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python38/Lib/site-packages/django/forms/boundfield.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -807,12 +822,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Python38/Lib/site-packages/django/http/request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="518" column="17" selection-start-line="518" selection-start-column="8" selection-end-line="518" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/pagination.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="79" column="61" lean-forward="true" selection-start-line="79" selection-start-column="61" selection-end-line="79" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/crm/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="72" column="16" lean-forward="true" selection-start-line="72" selection-start-column="16" selection-end-line="72" selection-end-column="16" />
+        <state relative-caret-position="373">
+          <caret line="95" column="43" lean-forward="true" selection-start-line="95" selection-start-column="43" selection-end-line="95" selection-end-column="43" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

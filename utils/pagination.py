@@ -1,9 +1,11 @@
 from django.utils.safestring import mark_safe
-
+from django.http import QueryDict
 
 class Pagination:
 
-    def __init__(self,request,all_count,max_show=11,per_num=10):
+    def __init__(self,request,all_count,query_params=QueryDict(),max_show=11,per_num=10):
+        # 查询条件 query=stone&page=1
+        self.query_params=query_params
         self.base_url=request.path_info
         try:
             # 获取当前的页码
@@ -63,31 +65,35 @@ class Pagination:
     def show_li(self):
 
         html_list = []
-
-        first_li = '<li><a href="{}?page=1">首页</a></li>'.format(self.base_url)
+        self.query_params['page']=1
+        # 查询条件 query=stone&page=1
+        first_li = '<li><a href="{}?{}">首页</a></li>'.format(self.base_url,self.query_params.urlencode())
         html_list.append(first_li)
 
         if self.current_page == 1:
             prev_li = '<li class="disabled"><a><<</a></li>'
         else:
-            prev_li = '<li><a href="{}?page={}"><<</a></li>'.format(self.base_url,self.current_page - 1)
+            self.query_params['page'] = self.current_page + 1
+            prev_li = '<li><a href="{}?{}"><<</a></li>'.format(self.base_url,self.query_params.urlencode())
         html_list.append(prev_li)
 
         for num in range(self.page_start, self.page_end + 1):
+            self.query_params['page'] = num
             if self.current_page == num:
-                li_html = '<li class="active"><a href="{0}?page={1}">{1}</a></li>'.format(self.base_url,num)
+                li_html = '<li class="active"><a href="{0}?{1}">{2}</a></li>'.format(self.base_url,self.query_params.urlencode(),num)
             else:
-                li_html = '<li><a href="{0}?page={1}">{1}</a></li>'.format(self.base_url,num)
+                li_html = '<li><a href="{0}?{1}">{2}</a></li>'.format(self.base_url,self.query_params.urlencode(),num)
             html_list.append(li_html)
 
         if self.current_page == self.total_num:
             next_li = '<li class="disabled"><a>>></a></li>'
         else:
-            next_li = '<li><a href="{}?page={}">>></a></li>'.format(self.base_url,self.current_page + 1)
+            self.query_params['page'] = self.current_page + 1
+            next_li = '<li><a href="{0}?{1}">>></a></li>'.format(self.base_url,self.query_params.urlencode())
 
         html_list.append(next_li)
-
-        last_li = '<li><a href="{}?page={}">尾页</a></li>'.format(self.base_url,self.total_num)
+        self.query_params['page']=self.total_num
+        last_li = '<li><a href="{0}?{1}">尾页</a></li>'.format(self.base_url,self.query_params.urlencode())
         html_list.append(last_li)
 
         html_str = mark_safe(''.join(html_list))

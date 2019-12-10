@@ -1,3 +1,5 @@
+import copy
+
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth
@@ -73,7 +75,15 @@ class CustomerList(View):
             # 私户
             all_customer = models.Customer.objects.filter(q,consultant=request.user)
 
-        page = Pagination(request, all_customer.count(), per_num=5)
+        #分页保留搜索条件
+        print(request.GET.urlencode())
+        query_params = copy.deepcopy(request.GET)
+        #_mutable改为True，就可以修改URL
+        # query_params._mutable = True
+        # query_params['page']=1
+
+
+        page = Pagination(request, all_customer.count(),query_params, per_num=2)
         return render(request, 'crm/customer_list.html',
                       # {'all_customer': all_customer}
                       {'all_customer': all_customer[page.start:page.end], 'pagination': page.show_li}
