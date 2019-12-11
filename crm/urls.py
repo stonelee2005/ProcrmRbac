@@ -32,6 +32,7 @@ urlpatterns = [
     #编辑客户
     # re_path(r'customer/edit/(\d+)', views.edit_customer, name='edit_customer')
     path('customer/add/', views.customer, name='add_customer'),
-    re_path(r'customer/edit/(\d+)', views.customer, name='edit_customer')
-    #私户
+    re_path(r'customer/edit/(\d+)', views.customer, name='edit_customer'),
+    #展示跟进记录
+    re_path(r'consult_record_list/', views.ConsultRecord.as_view(), name='consult_record')
 ]
