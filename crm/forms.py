@@ -3,8 +3,14 @@ from django.core.exceptions import ValidationError
 
 from crm import models
 
+class BaseForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for filed in self.fields.values():
+            filed.widget.attrs.update({'class': 'form-control'})
 
-class RegForm(forms.ModelForm):
+
+class RegForm(BaseForm):
     password = forms.CharField(
         label="密码",
         widget=forms.widgets.PasswordInput(),
@@ -39,11 +45,6 @@ class RegForm(forms.ModelForm):
             }
         }
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for filed in self.fields.values():
-            filed.widget.attrs.update({'class': 'form-control'})
-
     def clean(self):
         pwd = self.cleaned_data.get('password')
         re_pwd = self.cleaned_data.get('re_password')
@@ -54,7 +55,7 @@ class RegForm(forms.ModelForm):
         raise ValidationError('两次秘密不一致')
 
 # 客户form
-class CustomerForm(forms.ModelForm):
+class CustomerForm(BaseForm):
 
     class Meta:
         model =  models.Customer
@@ -64,7 +65,22 @@ class CustomerForm(forms.ModelForm):
             'birthday':forms.widgets.DateInput
         }
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for filed in self.fields.values():
-            filed.widget.attrs.update({'class': 'form-control'})
+
+# 客户form
+class ClassRecordForm(BaseForm):
+
+    class Meta:
+        model =  models.ConsultRecord
+        exclude=['delete_status']
+
+        # widgets={
+        #     'customer':forms.widgets.Select(choices=((1,'xxx')))
+        # }
+
+    def __init__(self,*args,**kwargs):
+        super().__init__(*args,**kwargs)
+        customer_choices=[ (i.id,i) for i in self.instance.consultant.customers.all()]
+        customer_choices.insert(0,('','----------'))
+        consultant_choices=[ (self.instance.consultant.id, self.instance.consultant)]
+        self.fields['customer'].widget.choices=customer_choices
+        self.fields['consultant'].widget.choices = consultant_choices

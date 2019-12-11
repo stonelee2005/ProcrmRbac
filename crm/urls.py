@@ -34,5 +34,9 @@ urlpatterns = [
     path('customer/add/', views.customer, name='add_customer'),
     re_path(r'customer/edit/(\d+)', views.customer, name='edit_customer'),
     #展示跟进记录
-    re_path(r'consult_record_list/', views.ConsultRecord.as_view(), name='consult_record')
+    re_path(r'consult_record_list/', views.ConsultRecord.as_view(), name='consult_record'),
+    #添加跟进记录
+    re_path(r'consult_record/add/', views.consult_record, name='add_consult_record'),
+    # 修改跟进记录
+    re_path(r'consult_record/edit/(\d+)', views.consult_record, name='edit_consult_record')
 ]

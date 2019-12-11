@@ -7,7 +7,7 @@ from django.utils.safestring import mark_safe
 from django.views import View
 
 from crm import models
-from crm.forms import RegForm, CustomerForm
+from crm.forms import RegForm, CustomerForm, ClassRecordForm
 from utils.pagination import Pagination
 from django.db.models import Q
 
@@ -85,7 +85,7 @@ class CustomerList(View):
         page = Pagination(request, all_customer.count(), query_params, per_num=2)
 
         # 生成按钮
-        add_btn,query_params = self.get_add_btn()
+        add_btn, query_params = self.get_add_btn()
 
         return render(request, 'crm/customer_list.html',
                       # {'all_customer': all_customer}
@@ -144,18 +144,53 @@ class CustomerList(View):
         # add_btn='<a href="{}?next={}" class="btn btn-primary btn-sm ">添加</a>'.format(reverse('add_customer'),url)
         add_btn = '<a href="{}?{}" class="btn btn-primary btn-sm ">添加</a>'.format(reverse('add_customer'), query_params)
         print('add_btn', add_btn)
-        return mark_safe(add_btn),query_params
+        return mark_safe(add_btn), query_params
+
 
 class ConsultRecord(View):
-    def get(self,request):
-        return render(request,'crm/consult_record_list.html')
+    def get(self, request):
+        all_consult_record = models.ConsultRecord.objects.filter(delete_status=False)
+        return render(request, 'crm/consult_record_list.html', {'all_consult_record': all_consult_record})
 
 
+def add_consult_record(request):
+    obj = models.ConsultRecord(consultant=request.user)
+    form_obj = ClassRecordForm(instance=obj)
+
+    if request.method == 'POST':
+        print('*' * 30)
+        form_obj = ClassRecordForm(request.POST)
+        if form_obj.is_valid():
+            form_obj.save()
+            return redirect(reverse('consult_record'))
+
+    return render(request, 'crm/add_consult_record.html', {'form_obj': form_obj})
 
 
+def edit_consult_record(request, edit_id):
+    obj = models.ConsultRecord.objects.filter(id=edit_id).first()
+    form_obj = ClassRecordForm(instance=obj)
+    if request.method == 'POST':
+        print('*' * 30)
+        form_obj = ClassRecordForm(request.POST, instance=obj)
+        if form_obj.is_valid():
+            form_obj.save()
+            return redirect(reverse('consult_record'))
 
+    return render(request, 'crm/edit_consult_record.html', {'form_obj': form_obj})
 
+#新增和修改跟进记录
+def consult_record(request, edit_id=None):
+    obj = models.ConsultRecord.objects.filter(id=edit_id).first() or models.ConsultRecord(consultant=request.user)
+    form_obj = ClassRecordForm(instance=obj)
+    if request.method == 'POST':
+        print('*' * 30)
+        form_obj = ClassRecordForm(request.POST, instance=obj)
+        if form_obj.is_valid():
+            form_obj.save()
+            return redirect(reverse('consult_record'))
 
+    return render(request, 'crm/edit_consult_record.html', {'form_obj': form_obj})
 # 增加客户
 # def add_customer(request):
 #     # 实例化一个空的form对象
@@ -171,70 +206,70 @@ class ConsultRecord(View):
 #     return render(request, 'crm/add_customer.html', {"from_obj": from_obj})
 
 
-    # 增加客户
-    def add_customer(request):
-        # 实例化一个空的form对象
-        form_obj = CustomerForm()
-        if request.method == 'POST':
-            # 实例化一个带提交数据的form对象
-            form_obj = CustomerForm(request.POST)
-            # 对提交数据进行校验
-            if form_obj.is_valid():
-                # 创建对象
-                form_obj.save()
-                return redirect(reverse('customer'))
+# 增加客户
+def add_customer(request):
+    # 实例化一个空的form对象
+    form_obj = CustomerForm()
+    if request.method == 'POST':
+        # 实例化一个带提交数据的form对象
+        form_obj = CustomerForm(request.POST)
+        # 对提交数据进行校验
+        if form_obj.is_valid():
+            # 创建对象
+            form_obj.save()
+            return redirect(reverse('customer'))
 
-        return render(request, 'crm/add_customer.html', {"form_obj": form_obj})
-
-
-    users = [{'name': 'alex{}'.format(i), 'pwd': 'alexsd{}'.format(i)} for i in range(1, 302)]
+    return render(request, 'crm/add_customer.html', {"form_obj": form_obj})
 
 
-    # def edit_customer(request,edit_id):
-    #
-    #     obj = models.Customer.objects.filter(id=edit_id).first()
-    #     form_obj=CustomerForm(instance=obj)
-    #     return render(request, 'crm/edit_customer.html', {"form_obj": form_obj})
+users = [{'name': 'alex{}'.format(i), 'pwd': 'alexsd{}'.format(i)} for i in range(1, 302)]
 
 
-    # 编辑客户
-    def edit_customer(request, edit_id):
-        # 根据ID查出所需要编辑的客户对象
-        obj = models.Customer.objects.filter(id=edit_id).first()
-        form_obj = CustomerForm(instance=obj)
-        if request.method == 'POST':
-            # 将提交的数据和要修改的实例交给form对象
-            form_obj = CustomerForm(request.POST, instance=obj)
-            if form_obj.is_valid():
-                form_obj.save()
-                return redirect(reverse('customer'))
-
-        return render(request, 'crm/edit_customer.html', {"form_obj": form_obj})
+# def edit_customer(request,edit_id):
+#
+#     obj = models.Customer.objects.filter(id=edit_id).first()
+#     form_obj=CustomerForm(instance=obj)
+#     return render(request, 'crm/edit_customer.html', {"form_obj": form_obj})
 
 
-    # 整合新增编辑客户
-    def customer(request, edit_id=None):
-        # 根据ID查出所需要编辑的客户对象
-        obj = models.Customer.objects.filter(id=edit_id).first()
-        form_obj = CustomerForm(instance=obj)
-        if request.method == 'POST':
-            # 将提交的数据和要修改的实例交给form对象
-            form_obj = CustomerForm(request.POST, instance=obj)
-            if form_obj.is_valid():
-                form_obj.save()
-                next = request.GET.get('next')
-                if next:
-                    return redirect(next)
-                return redirect(reverse('customer'))
+# 编辑客户
+def edit_customer(request, edit_id):
+    # 根据ID查出所需要编辑的客户对象
+    obj = models.Customer.objects.filter(id=edit_id).first()
+    form_obj = CustomerForm(instance=obj)
+    if request.method == 'POST':
+        # 将提交的数据和要修改的实例交给form对象
+        form_obj = CustomerForm(request.POST, instance=obj)
+        if form_obj.is_valid():
+            form_obj.save()
+            return redirect(reverse('customer'))
 
-        return render(request, 'crm/customer.html', {"form_obj": form_obj, "edit_id": edit_id})
+    return render(request, 'crm/edit_customer.html', {"form_obj": form_obj})
 
 
-    # 测试分页:分页之封装成类及使用
+# 整合新增编辑客户
+def customer(request, edit_id=None):
+    # 根据ID查出所需要编辑的客户对象
+    obj = models.Customer.objects.filter(id=edit_id).first()
+    form_obj = CustomerForm(instance=obj)
+    if request.method == 'POST':
+        # 将提交的数据和要修改的实例交给form对象
+        form_obj = CustomerForm(request.POST, instance=obj)
+        if form_obj.is_valid():
+            form_obj.save()
+            next = request.GET.get('next')
+            if next:
+                return redirect(next)
+            return redirect(reverse('customer'))
 
-    def user_list(request):
-        page = Pagination(request, len(users))
-        return render(request, 'user_list.html', {'data': users[page.start:page.end],
-                                                  # 'total_num': range(page_start, page_end + 1)
-                                                  'html_str': page.show_li
-                                                  })
+    return render(request, 'crm/customer.html', {"form_obj": form_obj, "edit_id": edit_id})
+
+
+# 测试分页:分页之封装成类及使用
+
+def user_list(request):
+    page = Pagination(request, len(users))
+    return render(request, 'user_list.html', {'data': users[page.start:page.end],
+                                              # 'total_num': range(page_start, page_end + 1)
+                                              'html_str': page.show_li
+                                              })
