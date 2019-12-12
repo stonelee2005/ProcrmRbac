@@ -48,6 +48,7 @@
                     <th>咨询日期</th>
                     <th>销售</th>
                     <th>已报班级</th>
+                    <th>跟进记录</th>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -66,6 +67,7 @@
                         <td>{{ customer.date }}</td>
                         <td>{{ customer.consultant }}</td>
                         <td>{{ customer.show_classes }}</td>
+                        <td><a href="{% url 'consult_record' customer.id %}">跟进记录</a></td>
                         <td><a href="{% url 'edit_customer' customer.id %}}?{{ query_params }}"><i class="fa fa-edit fa-fw"></i></a></td>
                     </tr>
                 {% endfor %}
