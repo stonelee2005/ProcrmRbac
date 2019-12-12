@@ -148,8 +148,11 @@ class CustomerList(View):
 
 
 class ConsultRecord(View):
-    def get(self, request):
-        all_consult_record = models.ConsultRecord.objects.filter(delete_status=False)
+    def get(self, request,customer_id):
+        if customer_id=='0':
+            all_consult_record = models.ConsultRecord.objects.filter(delete_status=False)
+        else:
+            all_consult_record = models.ConsultRecord.objects.filter(customer_id=customer_id,delete_status=False)
         return render(request, 'crm/consult_record_list.html', {'all_consult_record': all_consult_record})
 
 
@@ -175,7 +178,7 @@ def edit_consult_record(request, edit_id):
         form_obj = ClassRecordForm(request.POST, instance=obj)
         if form_obj.is_valid():
             form_obj.save()
-            return redirect(reverse('consult_record'))
+            return redirect(reverse('consult_record',args=(0,)))
 
     return render(request, 'crm/edit_consult_record.html', {'form_obj': form_obj})
 
@@ -188,7 +191,7 @@ def consult_record(request, edit_id=None):
         form_obj = ClassRecordForm(request.POST, instance=obj)
         if form_obj.is_valid():
             form_obj.save()
-            return redirect(reverse('consult_record'))
+            return redirect(reverse('consult_record',args=(0,)))
 
     return render(request, 'crm/edit_consult_record.html', {'form_obj': form_obj})
 # 增加客户
