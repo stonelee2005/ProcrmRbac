@@ -7,7 +7,7 @@ from django.utils.safestring import mark_safe
 from django.views import View
 
 from crm import models
-from crm.forms import RegForm, CustomerForm, ClassRecordForm
+from crm.forms import RegForm, CustomerForm, ClassRecordForm, EnrollmentForm
 from utils.pagination import Pagination
 from django.db.models import Q
 
@@ -150,7 +150,7 @@ class CustomerList(View):
 class ConsultRecord(View):
     def get(self, request,customer_id):
         if customer_id=='0':
-            all_consult_record = models.ConsultRecord.objects.filter(delete_status=False)
+            all_consult_record = models.ConsultRecord.objects.filter(delete_status=False,consultant=request.user)
         else:
             all_consult_record = models.ConsultRecord.objects.filter(customer_id=customer_id,delete_status=False)
         return render(request, 'crm/consult_record_list.html', {'all_consult_record': all_consult_record})
@@ -208,6 +208,74 @@ def consult_record(request, edit_id=None):
 #             return redirect(reverse('customer'))
 #     return render(request, 'crm/add_customer.html', {"from_obj": from_obj})
 
+#展示报名记录
+class EnrollmentList(View):
+
+    def get(self, request,customer_id):
+        if customer_id=='0':
+            all_enrollment_record = models.Enrollment.objects.filter(delete_status=False,customer__consultant=request.user)
+        else:
+            all_enrollment_record = models.Enrollment.objects.filter(customer_id=customer_id,delete_status=False)
+        query_params = self.get_query_params()
+        return render(request, 'crm/enrollment_list.html', {'all_enrollment_record': all_enrollment_record,'query_params':query_params})
+
+    #获取
+    def get_query_params(self):
+        url = self.request.get_full_path()
+        qd = QueryDict()
+        qd._mutable = True
+        qd['next'] = url
+        query_params = qd.urlencode()
+        # add_btn='<a href="{}?next={}" class="btn btn-primary btn-sm ">添加</a>'.format(reverse('add_customer'),url)
+        return query_params
+
+# def enrollment(request,customer_id):
+#     obj = models.Enrollment(customer_id=customer_id)
+#     # 实例化一个空的form对象
+#     form_obj = EnrollmentForm(instance=obj)
+#     if request.method == 'POST':
+#         # 实例化一个带提交数据的form对象
+#         form_obj = EnrollmentForm(request.POST,instance=obj)
+#
+#         print('-' * 10,form_obj.is_valid())
+#         # 对提交数据进行校验
+#         if form_obj.is_valid():
+#             # 创建对象
+#             enrollment_obj=form_obj.save()
+#             # 修改客户的状态
+#             enrollment_obj.customer.status = 'signed'
+#             enrollment_obj.save()
+#
+#             next = request.GET.get('next')
+#             print('*'*10,next)
+#             if next:
+#                 return redirect(next)
+#             else:
+#                 return redirect(reverse('my_customer'))
+#
+#     return render(request, 'crm/enrollment.html', {"form_obj": form_obj})
+
+# 添加报名记录
+def enrollment(request, customer_id=None,edit_id=None):
+    obj = models.Enrollment.objects.filter(id=edit_id).first() or models.Enrollment(customer_id=customer_id)
+    form_obj = EnrollmentForm(instance=obj)
+    if request.method == 'POST':
+        form_obj = EnrollmentForm(request.POST, instance=obj)
+        print(form_obj)
+        if form_obj.is_valid():
+            enrollment_obj = form_obj.save()
+            # 修改客户的状态
+
+            enrollment_obj.customer.status = 'signed'
+            enrollment_obj.customer.save()
+
+            next = request.GET.get('next')
+            if next:
+                return redirect(next)
+            else:
+                return redirect(reverse('my_customer'))
+
+    return render(request, 'crm/enrollment.html', {"form_obj": form_obj})
 
 # 增加客户
 def add_customer(request):

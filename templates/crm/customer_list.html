@@ -49,7 +49,10 @@
                     <th>销售</th>
                     <th>已报班级</th>
                     <th>跟进记录</th>
-                    <th>操作</th>
+                    {% if request.path_info == '/crm/my_customer/' %}
+                        <th>添加记录</th>
+                        <th>操作</th>
+                    {% endif %}
                 </tr>
                 </thead>
                 <tbody>
@@ -67,7 +70,12 @@
                         <td>{{ customer.date }}</td>
                         <td>{{ customer.consultant }}</td>
                         <td>{{ customer.show_classes }}</td>
-                        <td><a href="{% url 'consult_record' customer.id %}">跟进记录</a></td>
+                        {% if request.path_info == '/crm/my_customer/' %}
+                            <td><a href="{% url 'consult_record' customer.id %}">跟进记录</a></td>
+{#                            <td><a href="{% url 'add_enrollment' customer.id %}}?{{ query_params }}">添加报名表</a></td>#}
+                            <td>{{ customer.enroll_link }}</td>
+
+                        {% endif %}
                         <td><a href="{% url 'edit_customer' customer.id %}}?{{ query_params }}"><i class="fa fa-edit fa-fw"></i></a></td>
                     </tr>
                 {% endfor %}

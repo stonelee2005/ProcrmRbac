@@ -4,7 +4,7 @@ from django.core.exceptions import PermissionDenied
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager,User
 from multiselectfield import MultiSelectField
 from django.utils.safestring import mark_safe
-
+from django.urls import reverse
 
 # Create your models here.
 # Customer.sex
@@ -106,6 +106,13 @@ class Customer(models.Model):
     def show_classes(self):
         return ' | '.join([ str(i) for i in self.class_list.all() ])
 
+    def enroll_link(self):
+
+        if not self.enrollment_set.exists():
+            return mark_safe('<a href={}">添加报名表</a>'.format(reverse('add_enrollment',args=(self.id,))))
+        else:
+            return mark_safe('<a href={}">添加</a> | <a href={}">查看</a>'.format(reverse('add_enrollment',args=(self.id,)),reverse('enrollment',args=(self.id,))))
+
     def __str__(self):
         return self.name
 
@@ -184,7 +191,7 @@ class Enrollment(models.Model):
     memo = models.TextField('备注', blank=True, null=True)
     delete_status = models.BooleanField(verbose_name='删除状态', default=False)
     customer = models.ForeignKey('Customer', verbose_name='客户名称', on_delete=models.CASCADE)
-    school = models.ForeignKey('Campuses', on_delete=models.CASCADE)
+    school = models.ForeignKey('Campuses', verbose_name='校区', on_delete=models.CASCADE)
     enrolment_class = models.ForeignKey("ClassList", verbose_name="所报班级", on_delete=models.CASCADE)
 
     class Meta:

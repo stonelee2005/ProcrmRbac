@@ -38,5 +38,11 @@ urlpatterns = [
     #添加跟进记录
     re_path(r'consult_record/add/', views.consult_record, name='add_consult_record'),
     # 修改跟进记录
-    re_path(r'consult_record/edit/(\d+)', views.consult_record, name='edit_consult_record')
+    re_path(r'consult_record/edit/(\d+)', views.consult_record, name='edit_consult_record'),
+    # 展示报名记录
+    re_path(r'enrollment_list/(?P<customer_id>\d+)', views.EnrollmentList.as_view(), name='enrollment'),
+    # 添加报名记录
+    re_path(r'enrollment/add/(?P<customer_id>\d+)', views.enrollment, name='add_enrollment'),
+    # 编辑报名记录
+    re_path(r'enrollment/edit/(?P<edit_id>\d+)', views.enrollment, name='edit_enrollment'),
 ]

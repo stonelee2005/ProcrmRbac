@@ -66,7 +66,7 @@ class CustomerForm(BaseForm):
         }
 
 
-# 客户form
+# 跟进记录form
 class ClassRecordForm(BaseForm):
 
     class Meta:
@@ -84,3 +84,36 @@ class ClassRecordForm(BaseForm):
         consultant_choices=[ (self.instance.consultant.id, self.instance.consultant)]
         self.fields['customer'].widget.choices=customer_choices
         self.fields['consultant'].widget.choices = consultant_choices
+
+# 跟进记录form
+# class EnrollmentForm(BaseForm):
+#
+#     class Meta:
+#         model =  models.Enrollment
+#         exclude=['delete_status','contract_approved']
+#
+#
+#     def __init__(self, *args, **kwargs):
+#         super().__init__(*args, **kwargs)
+#         # 限制当前的客户只能是传的id对应的客户
+#         self.fields['customer'].widget.choices = [(self.instance.customer.id, self.instance.customer), ]
+#         # 限制当前可报名班级是当前客户的意向班级
+#         self.fields['enrolment_class'].widget.choices= [(i.id,i) for i in self.instance.customer.class_list.all()]
+
+
+# 报名表Form
+class EnrollmentForm(BaseForm):
+    class Meta:
+        model = models.Enrollment
+        exclude = ['delete_status', 'contract_approved']
+        labels = {}
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for filed in self.fields.values():
+            filed.widget.attrs.update({'class': 'form-control'})
+
+        # 限制当前的客户只能是传的id对应的客户
+        self.fields['customer'].widget.choices = [(self.instance.customer_id, self.instance.customer), ]
+        # 限制当前可报名的班级是当前客户的意向班级
+        self.fields['enrolment_class'].widget.choices = [(i.id, i) for i in self.instance.customer.class_list.all()]
