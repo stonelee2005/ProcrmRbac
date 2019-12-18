@@ -13,9 +13,9 @@
 {% block content %}
     <div class="panel panel-default">
     <!-- Default panel contents -->
-    <div class="panel-heading">Panel heading</div>
+    <div class="panel-heading">课程列表</div>
     <div class="panel-body">
-        <a href="{% url 'add_consult_record' %}" class="btn btn-primary btn-sm ">添加跟进记录</a>
+        <a href="{% url 'add_course' class_id %}" class="btn btn-primary btn-sm">添加</a>
         <div class="form-group">
             <form action="" class="form-inline pull-right">
                 <input type="text" name="query" class="form-control" placeholder="搜索">
@@ -27,6 +27,7 @@
             <select name="action" class="form-control" style="margin: 5px 0">
                 <option value="">请选择</option>
                 <option value="multi_delete">删除</option>
+                <option value="multi_init">初始化学习记录</option>
             </select>
             <button type="submit" class="btn btn-success btn-sm">提交</button>
 
@@ -36,25 +37,25 @@
                 <tr>
                     <th><input type="checkbox" id="selectAll"/></th>
                     <th>序号</th>
-                    <th>客户</th>
-                    <th>跟进内容</th>
-                    <th>跟进状态</th>
-                    <th>跟进日期</th>
-                    <th>跟进人</th>
-                    <th>修改</th>
+                    <th>课程名称</th>
+                    <th>课程标题</th>
+                    <th>是否有作业</th>
+                    <th>上课日期</th>
+                    <th>班主任</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
-                {% for record in all_consult_record %}
+                {% for course in all_course %}
                     <tr>
-                        <td><input type="checkbox" name='id' value="{{ record.id }}"></td>
+                        <td><input type="checkbox" name='id' value="{{ course.id }}"></td>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ record.customer }}</td>
-                        <td>{{ record.note }}</td>
-                        <td>{{ record.get_status_display }}</td>
-                        <td>{{ record.date }}</td>
-                        <td>{{ record.consultant }}</td>
-                        <td><a href="{% url 'edit_consult_record' record.id %}}"><i class="fa fa-edit fa-fw"></i></a></td>
+                        <td><a href="{% url 'study_record_list' course_id %}">{{ course }}</a> </td>
+                        <td>{{ course.course_title }}</td>
+                        <td>{{ course.has_homework }}</td>
+                        <td>{{ course.date }}</td>
+                        <td>{{ course.teacher }}</td>
+                        <td><a href="{% url 'edit_course' course.id %}"><i class="fa fa-edit fa-fw"></i></a></td>
                     </tr>
                 {% endfor %}
                 </tbody>

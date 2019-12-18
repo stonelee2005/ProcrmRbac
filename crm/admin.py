@@ -3,6 +3,6 @@ from crm import models
 # Register your models here.
 
 admin.site.register(models.Customer)
-admin.site.register(models.Classlist)
+admin.site.register(models.ClassList)
 admin.site.register(models.Campuses)
 admin.site.register(models.ContractTemplate)

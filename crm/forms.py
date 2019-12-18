@@ -11,6 +11,7 @@ class BaseForm(forms.ModelForm):
 
 
 class RegForm(BaseForm):
+
     password = forms.CharField(
         label="密码",
         widget=forms.widgets.PasswordInput(),
@@ -117,3 +118,41 @@ class EnrollmentForm(BaseForm):
         self.fields['customer'].widget.choices = [(self.instance.customer_id, self.instance.customer), ]
         # 限制当前可报名的班级是当前客户的意向班级
         self.fields['enrolment_class'].widget.choices = [(i.id, i) for i in self.instance.customer.class_list.all()]
+
+
+#班级Form
+class ClassForm(BaseForm):
+    forms.DateField(label='日期', )
+    class Meta:
+        model=models.ClassList
+        fields='__all__'
+
+    start_date = forms.DateField(
+        label="开班日期",
+        widget=forms.DateInput(attrs={'type': 'date'})
+    )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for filed in self.fields.values():
+            filed.widget.attrs.update({'class': 'form-control'})
+
+class CourseForm(BaseForm):
+
+    class Meta:
+        model=models.CourseRecord
+        fields='__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        # 限制当前的客户只能是传的id对应的客户
+        self.fields['re_class'].widget.choices = [(self.instance.re_class_id, self.instance.re_class)]
+        # 限制当前可报名的班级是当前客户的意向班级
+        self.fields['teacher'].widget.choices = [(self.instance.teacher_id, self.instance.teacher)]
+
+class StudyRecordForm(BaseForm):
+
+    class Meta:
+        model=models.StudyRecord
+        fields=['attendance','score','homework_note','student']

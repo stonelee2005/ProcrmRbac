@@ -27,8 +27,11 @@
             <select name="action" class="form-control" style="margin: 5px 0">
                 <option value="">请选择</option>
                 <option value="multi_delete">删除</option>
-                <option value="multi_pub">放入公户</option>
-                <option value="multi_apply">放入私户</option>
+                {% if request.path_info == '/crm/my_customer/' %}
+                    <option value="multi_pub">放入公户</option>
+                {% else %}
+                    <option value="multi_apply">放入私户</option>
+                {% endif %}
             </select>
             <button type="submit" class="btn btn-success btn-sm">提交</button>
 
@@ -76,7 +79,7 @@
                             <td>{{ customer.enroll_link }}</td>
 
                         {% endif %}
-                        <td><a href="{% url 'edit_customer' customer.id %}}?{{ query_params }}"><i class="fa fa-edit fa-fw"></i></a></td>
+                        <td><a href="{% url 'edit_customer' customer.id %}?{{ query_params }}"><i class="fa fa-edit fa-fw"></i></a></td>
                     </tr>
                 {% endfor %}
                 </tbody>

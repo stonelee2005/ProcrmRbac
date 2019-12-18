@@ -17,12 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 
-from crm import views
+from crm.views import consultant
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('login/', views.login),
-    path('reg/', views.reg),
+    path('login/', consultant.login),
+    path('reg/', consultant.reg),
     path('crm/', include('crm.urls')),
-    path('user_list/', views.user_list),
+    path('user_list/', consultant.user_list),
 ]

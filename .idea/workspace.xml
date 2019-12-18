@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/crm/views.py" line="278" />
+    <bookmark url="file://$PROJECT_DIR$/crm/views/consultant.py" line="368" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45d03062-7d8a-4171-9dfb-8bb4cc4b8cc7" name="Default Changelist" comment="">
+    <list default="true" id="45d03062-7d8a-4171-9dfb-8bb4cc4b8cc7" name="Default Changelist" comment="day77-05 跟进页面流程梳理">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crm/views/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crm/views/teacher.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/crm/consultant/.idea/consultant.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/crm/form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/crm/teacher/class_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/crm/teacher/course_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/crm/teacher/course_list_bak.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/crm/teacher/study_record_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/crm/teacher/study_record_list_bak.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Procrm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Procrm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procrm/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Procrm/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procrm/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Procrm/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crm/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/crm/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crm/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/crm/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crm/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/crm/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/crm/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/crm/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crm/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/crm/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/crm/customer_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crm/customer_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crm/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/crm/views/consultant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/crm/add_consult_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crm/consultant/add_consult_record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/crm/add_customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crm/consultant/add_customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/crm/add_customer_bak.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crm/consultant/add_customer_bak.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/crm/add_customer_nbcrm.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crm/consultant/add_customer_nbcrm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/crm/consult_record_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crm/consultant/consult_record_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/crm/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crm/consultant/customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/crm/customer_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crm/consultant/customer_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/crm/edit_consult_record.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crm/consultant/edit_consult_record.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/crm/edit_customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crm/consultant/edit_customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/crm/enrollment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crm/consultant/enrollment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/crm/enrollment_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/crm/consultant/enrollment_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,26 +71,71 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="python: schema" type="ebfa3cd1:MariaImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="python@192.168.75.129" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="python: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="crm_customer: table" type="dbc44a63:MariaImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="ExecutionTargetDialog">
+    <checked>
+      <node key="acd5e08e-8a61-4033-a527-09704834c715">
+        <node key="python" />
+      </node>
+    </checked>
+    <expanded>
+      <node key="acd5e08e-8a61-4033-a527-09704834c715" />
+    </expanded>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Procrm" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/crm/views.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crm/views/teacher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="180" column="64" lean-forward="true" selection-start-line="180" selection-start-column="64" selection-end-line="180" selection-end-column="64" />
+            <state relative-caret-position="-3551">
+              <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+              <folding>
+                <element signature="e#10#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://acd5e08e-8a61-4033-a527-09704834c715/schema/python/table/crm_studyrecord">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Procrm/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="78" column="31" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://acd5e08e-8a61-4033-a527-09704834c715/schema/python/table/crm_userprofile">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crm/views/consultant.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="43">
+              <caret line="109" selection-start-line="97" selection-end-line="109" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -72,88 +144,45 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/crm/edit_consult_record.html">
+        <entry file="file://$PROJECT_DIR$/templates/crm/teacher/course_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+            <state relative-caret-position="763">
+              <caret line="80" column="14" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/crm/add_consult_record.html">
+        <entry file="file://$PROJECT_DIR$/templates/crm/teacher/study_record_list_bak.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/crm/teacher/study_record_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+            <state relative-caret-position="1077">
+              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/crm/edit_customer.html">
+        <entry file="file://$PROJECT_DIR$/templates/crm/teacher/class_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="45" />
+            <state relative-caret-position="323">
+              <caret line="17" column="30" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/crm/consult_record_list.html">
+        <entry file="file://$PROJECT_DIR$/crm/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crm/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="36" column="57" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
+            <state relative-caret-position="349">
+              <caret line="257" selection-start-line="257" selection-end-line="273" />
               <folding>
-                <element signature="e#627#659#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/layout.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="59" column="20" lean-forward="true" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/crm/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1330">
-              <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python38/Lib/site-packages/django/forms/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5016">
-              <caret line="278" column="8" selection-start-line="278" selection-start-column="8" selection-end-line="278" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/crm/customer_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="63" column="54" lean-forward="true" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -164,20 +193,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>course_choices</find>
-      <find>&quot;</find>
-      <find>USer</find>
-      <find>verbose_name</find>
-      <find>models.SET_NULL</find>
-      <find>认证</find>
-      <find>img</find>
       <find>customer_note</find>
       <find>UserProfile</find>
       <find>Department</find>
@@ -193,10 +215,26 @@
       <find>page</find>
       <find>urlenode</find>
       <find>customer</find>
+      <find>consult_record</find>
+      <find>EnrollmentForm</find>
+      <find>enrollment</find>
+      <find>Enrollment</find>
+      <find>edit_id</find>
+      <find>all_enrollment_record</find>
+      <find>show_cla</find>
+      <find>edit_enrollment_record</find>
+      <find>mult</find>
+      <find>views</find>
+      <find>on_delete</find>
+      <find>get_s</find>
+      <find>error</find>
+      <find>class_list</find>
+      <find>classid</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
       <replace>models.CASCADE</replace>
+      <replace>consultant</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -217,11 +255,7 @@
         <option value="$PROJECT_DIR$/static/css/font-awesome.min.css" />
         <option value="$PROJECT_DIR$/templates/reg.html" />
         <option value="$PROJECT_DIR$/static/css/dashboard.css" />
-        <option value="$PROJECT_DIR$/crm/admin.py" />
-        <option value="$PROJECT_DIR$/Procrm/settings.py" />
-        <option value="$PROJECT_DIR$/crm/models.py" />
         <option value="$PROJECT_DIR$/templates/user_list.html" />
-        <option value="$PROJECT_DIR$/Procrm/urls.py" />
         <option value="$PROJECT_DIR$/templates/crm/add_customer_nbcrm.html" />
         <option value="$PROJECT_DIR$/templates/crm/add_customer_bak.html" />
         <option value="$PROJECT_DIR$/templates/crm/add_customer.html" />
@@ -230,20 +264,40 @@
         <option value="$PROJECT_DIR$/utils/pagination.py" />
         <option value="$PROJECT_DIR$/templates/crm/add_consult_record.html" />
         <option value="$PROJECT_DIR$/templates/crm/edit_consult_record.html" />
-        <option value="$PROJECT_DIR$/crm/forms.py" />
-        <option value="$PROJECT_DIR$/crm/urls.py" />
-        <option value="$PROJECT_DIR$/templates/layout.html" />
         <option value="$PROJECT_DIR$/templates/crm/consult_record_list.html" />
+        <option value="$PROJECT_DIR$/templates/crm/enrollment.html" />
+        <option value="$PROJECT_DIR$/crm/views_bak.py" />
+        <option value="$PROJECT_DIR$/templates/crm/enrollment_list.html" />
+        <option value="$PROJECT_DIR$/Procrm/settings.py" />
         <option value="$PROJECT_DIR$/templates/crm/customer_list.html" />
         <option value="$PROJECT_DIR$/crm/views.py" />
+        <option value="$PROJECT_DIR$/crm/teacher.py" />
+        <option value="$PROJECT_DIR$/crm/consultant.py" />
+        <option value="$PROJECT_DIR$/Procrm/urls.py" />
+        <option value="$PROJECT_DIR$/templates/crm/class_list.html" />
+        <option value="$PROJECT_DIR$/crm/admin.py" />
+        <option value="$PROJECT_DIR$/templates/layout.html" />
+        <option value="$PROJECT_DIR$/templates/crm/form.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.sql" />
+        <option value="$PROJECT_DIR$/templates/crm/consultant/consult_record_list.html" />
+        <option value="$PROJECT_DIR$/templates/crm/consultant/customer_list.html" />
+        <option value="$PROJECT_DIR$/crm/models.py" />
+        <option value="$PROJECT_DIR$/templates/crm/teacher/class_list.html" />
+        <option value="$PROJECT_DIR$/crm/views/consultant.py" />
+        <option value="$PROJECT_DIR$/crm/urls.py" />
+        <option value="$PROJECT_DIR$/crm/forms.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/crm/views/teacher.py" />
+        <option value="$PROJECT_DIR$/templates/crm/teacher/study_record_list.html" />
+        <option value="$PROJECT_DIR$/templates/crm/teacher/course_list.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="510" />
-    <option name="y" value="143" />
-    <option name="width" value="2054" />
-    <option name="height" value="1172" />
+    <option name="x" value="19" />
+    <option name="y" value="300" />
+    <option name="width" value="1340" />
+    <option name="height" value="910" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -251,6 +305,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -266,6 +321,12 @@
             <path>
               <item name="Procrm" type="b2602c69:ProjectViewProjectNode" />
               <item name="Procrm" type="462c0819:PsiDirectoryNode" />
+              <item name="crm" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Procrm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Procrm" type="462c0819:PsiDirectoryNode" />
               <item name="Procrm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -282,13 +343,26 @@
             <path>
               <item name="Procrm" type="b2602c69:ProjectViewProjectNode" />
               <item name="Procrm" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="crm" type="462c0819:PsiDirectoryNode" />
+              <item name="consultant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Procrm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Procrm" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="crm" type="462c0819:PsiDirectoryNode" />
+              <item name="teacher" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Procrm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Procrm" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,25 +370,28 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="SQL" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/crm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../luffy_permission" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\templates\crm" />
-      <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\templates" />
-      <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\crm\migrations" />
-      <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\static\plugins" />
-      <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\static\img" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\templates\crm\teacher" />
+      <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\templates\crm\consultant" />
+      <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\crm\views" />
       <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\templates\crm" />
       <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\crm" />
-      <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\templates\crm\teacher" />
+      <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\templates\crm\consultant" />
+      <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\templates\crm" />
+      <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\crm" />
+      <recent name="E:\015.TecStudy\024.Python\001.pythonlnh\Procrm\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -427,7 +504,13 @@
       <workItem from="1575930795412" duration="331000" />
       <workItem from="1575980644500" duration="4007000" />
       <workItem from="1576064928036" duration="12062000" />
-      <workItem from="1576149569632" duration="2655000" />
+      <workItem from="1576149569632" duration="11394000" />
+      <workItem from="1576220571293" duration="10327000" />
+      <workItem from="1576499281401" duration="9833000" />
+      <workItem from="1576580344565" duration="4947000" />
+      <workItem from="1576586264633" duration="354000" />
+      <workItem from="1576587176408" duration="6318000" />
+      <workItem from="1576668663657" duration="3780000" />
     </task>
     <task id="LOCAL-00001" summary="ProCRM">
       <created>1575930988350</created>
@@ -471,33 +554,54 @@
       <option name="project" value="LOCAL" />
       <updated>1576079952018</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="day77-05 跟进页面流程梳理">
+      <created>1576152625540</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1576152625540</updated>
+    </task>
+    <task id="LOCAL-00008" summary="day77-05 跟进页面流程梳理">
+      <created>1576152661708</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576152661708</updated>
+    </task>
+    <task id="LOCAL-00009" summary="在报名记录页面表里添加编辑报名表及报名表链接显示">
+      <created>1576228170272</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1576228170273</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104228000" />
+    <option name="totallyTimeSpent" value="148526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1375" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13155803" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.66584766" visible="true" weight="0.1363275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.33415234" side_tool="true" weight="0.13235295" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29710144" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960256" weight="0.29710144" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32930756" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50039744" side_tool="true" weight="0.34460548" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49960256" visible="true" weight="0.34460548" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32930756" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.3473768" side_tool="true" visible="true" weight="0.31400967" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.65262324" visible="true" weight="0.31400967" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.49960256" weight="0.32930756" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32930756" />
+      <window_info active="true" anchor="bottom" id="GitHub Pull Requests" order="14" weight="0.32930756" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -513,115 +617,15 @@
     <MESSAGE value="Pagniation分页保留搜索条件" />
     <MESSAGE value="s14_day77-03 新增、编辑后跳转至源页面" />
     <MESSAGE value="day77-04 编写我的展示、新增、编辑跟进记录" />
-    <option name="LAST_COMMIT_MESSAGE" value="day77-04 编写我的展示、新增、编辑跟进记录" />
+    <MESSAGE value="day77-05 跟进页面流程梳理" />
+    <MESSAGE value="在报名记录页面表里添加编辑报名表及报名表链接显示" />
+    <option name="LAST_COMMIT_MESSAGE" value="在报名记录页面表里添加编辑报名表及报名表链接显示" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Procrm$models.coverage" NAME="models Coverage Results" MODIFIED="1575211659952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/crm" />
     <SUITE FILE_PATH="coverage/Procrm$test.coverage" NAME="test Coverage Results" MODIFIED="1575090304437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Procrm" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/js/supersized.3.2.7.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/supersized-init.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="345" selection-start-line="1" selection-start-column="345" selection-end-line="1" selection-end-column="345" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/jquery-1.8.2.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python38/Lib/site-packages/django/db/models/fields/related.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-191">
-          <caret line="599" column="25" selection-start-line="599" selection-start-column="25" selection-end-line="599" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Procrm/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crm/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Procrm/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crm/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/acd5e08e-8a61-4033-a527-09704834c715/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="852">
-          <caret line="153" column="19" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/supersized.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="89" column="18" selection-start-line="89" selection-start-column="15" selection-end-line="89" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/reset.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="558" lean-forward="true" selection-start-column="506" selection-end-column="558" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/font-awesome.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="2926" selection-start-line="2926" selection-end-line="2926" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/plugins/bootstrap-3.3.7/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="4486" column="3" selection-start-line="4486" selection-start-column="3" selection-end-line="4486" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/dashboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/style2.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2584">
@@ -629,41 +633,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://acd5e08e-8a61-4033-a527-09704834c715/schema/python/table/crm_userprofile">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python38/Lib/site-packages/django/contrib/admin/sites.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
           <caret line="536" selection-start-line="536" selection-end-line="536" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://acd5e08e-8a61-4033-a527-09704834c715/schema/python/table/crm_classlist">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crm/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Procrm/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
         </state>
       </provider>
     </entry>
@@ -695,7 +668,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/crm/add_customer_bak.html">
+    <entry file="file://$PROJECT_DIR$/templates/crm/consultant/add_customer_bak.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
           <caret line="23" column="57" lean-forward="true" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
@@ -716,13 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/crm/add_customer_nbcrm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1100">
-          <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/web-forms.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -737,13 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://acd5e08e-8a61-4033-a527-09704834c715/schema/python/table/crm_consultrecord">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python38/Lib/site-packages/django/http/request.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9462">
@@ -751,33 +710,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/CRM管理系统.url">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crm/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="159" selection-start-line="159" selection-end-line="168" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Procrm/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-          <folding>
-            <element signature="e#630#662#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/CRM管理系统.url" />
     <entry file="file://$PROJECT_DIR$/utils/pagination.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1125">
@@ -795,7 +728,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/crm/add_customer.html">
+    <entry file="file://$PROJECT_DIR$/templates/crm/consultant/add_customer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
@@ -809,89 +742,261 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/crm/customer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/crm/edit_consult_record.html">
+    <entry file="file://$PROJECT_DIR$/templates/crm/consultant/edit_consult_record.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/crm/edit_customer.html">
+    <entry file="file://$PROJECT_DIR$/templates/crm/consultant/edit_customer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crm/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1330">
-          <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python38/Lib/site-packages/django/forms/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5016">
-          <caret line="278" column="8" selection-start-line="278" selection-start-column="8" selection-end-line="278" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/crm/consult_record_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="59" column="20" lean-forward="true" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/crm/customer_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="63" column="54" lean-forward="true" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/crm/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="36" column="57" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
-          <folding>
-            <element signature="e#627#659#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/crm/add_consult_record.html">
+    <entry file="file://$PROJECT_DIR$/templates/crm/consultant/add_consult_record.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="37" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crm/views.py">
+    <entry file="file://C:/Python38/Lib/site-packages/django/forms/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="180" column="64" lean-forward="true" selection-start-line="180" selection-start-column="64" selection-end-line="180" selection-end-column="64" />
+        <state relative-caret-position="233">
+          <caret line="182" column="8" selection-start-line="182" selection-start-column="8" selection-end-line="182" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/crm/consultant/add_customer_nbcrm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://acd5e08e-8a61-4033-a527-09704834c715/schema/python/table/crm_enrollment">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://acd5e08e-8a61-4033-a527-09704834c715/schema/python/table/crm_consultrecord">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crm/views/views_bak.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="418" selection-start-line="418" selection-end-line="418" />
+          <folding>
+            <element signature="e#0#68#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procrm/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding>
+            <element signature="e#630#662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/crm/consultant/customer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crm/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python38/Lib/site-packages/django/db/models/fields/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="1145" column="41" selection-start-line="1145" selection-start-column="36" selection-end-line="1145" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/crm/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="158" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/crm/consultant/enrollment_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/crm/consultant/enrollment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="57" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/crm/consultant/customer_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1539">
+          <caret line="81" column="3" selection-start-line="81" selection-start-column="3" selection-end-line="81" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/crm/consultant/consult_record_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1083">
+          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://acd5e08e-8a61-4033-a527-09704834c715/schema/python/table/crm_classlist">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python38/Lib/site-packages/django/views/generic/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="82" column="20" selection-start-line="82" selection-start-column="20" selection-end-line="82" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python38/Lib/site-packages/django/forms/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="265" selection-start-line="265" selection-end-line="265" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crm/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="62" column="56" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
+          <folding>
+            <element signature="e#627#659#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crm/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2850">
+          <caret line="153" column="21" selection-start-line="153" selection-start-column="6" selection-end-line="153" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/crm/teacher/class_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crm/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="257" selection-start-line="257" selection-end-line="273" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://acd5e08e-8a61-4033-a527-09704834c715/schema/python/table/crm_userprofile">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://acd5e08e-8a61-4033-a527-09704834c715/schema/python/table/crm_studyrecord">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crm/views/consultant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="109" selection-start-line="97" selection-end-line="109" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procrm/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="78" column="31" selection-start-line="78" selection-start-column="17" selection-end-line="78" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crm/views/teacher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3551">
+          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
+          <folding>
+            <element signature="e#10#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/crm/teacher/course_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="763">
+          <caret line="80" column="14" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/crm/teacher/study_record_list_bak.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/crm/teacher/study_record_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1077">
+          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
         </state>
       </provider>
     </entry>

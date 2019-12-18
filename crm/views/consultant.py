@@ -1,5 +1,6 @@
 import copy
 
+from django.db import transaction
 from django.http import HttpResponse, QueryDict
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth
@@ -10,7 +11,7 @@ from crm import models
 from crm.forms import RegForm, CustomerForm, ClassRecordForm, EnrollmentForm
 from utils.pagination import Pagination
 from django.db.models import Q
-
+from django.conf import settings
 
 # Create your views here.
 
@@ -54,7 +55,7 @@ def customer_list(request):
         all_customer = models.Customer.objects.filter(consultant=request.user)
 
     page = Pagination(request, all_customer.count(), per_num=5)
-    return render(request, 'crm/customer_list.html',
+    return render(request, 'crm/consultant/customer_list.html',
                   # {'all_customer': all_customer}
                   {'all_customer': all_customer[page.start:page.end], 'pagination': page.show_li}
                   )
@@ -87,7 +88,7 @@ class CustomerList(View):
         # 生成按钮
         add_btn, query_params = self.get_add_btn()
 
-        return render(request, 'crm/customer_list.html',
+        return render(request, 'crm/consultant/customer_list.html',
                       # {'all_customer': all_customer}
                       {'all_customer': all_customer[page.start:page.end], 'pagination': page.show_li,
                        'add_btn': add_btn, 'query_params': query_params}
@@ -107,15 +108,35 @@ class CustomerList(View):
             return request
         return self.get(request)
 
+    # def multi_apply(self):
+    #     # 公户变私户
+    #
+    #     ids = self.request.POST.getlist('id')
+    #     # 方法1
+    #     # models.Customer.objects.filter(id__in=ids).update(consultant=self.request.user)
+    #
+    #     # 方法2
+    #     self.request.user.customers.add(*models.Customer.objects.filter(id__in=ids))
+
+    # 事务加行级锁
     def multi_apply(self):
         # 公户变私户
 
         ids = self.request.POST.getlist('id')
-        # 方法1
-        # models.Customer.objects.filter(id__in=ids).update(consultant=self.request.user)
+        apply_num = len(ids)
 
-        # 方法2
-        self.request.user.customers.add(*models.Customer.objects.filter(id__in=ids))
+        if self.request.user.customers.count() + apply_num > settings.CUSTOMER_MAX_NUM:
+            return HttpResponse('私户已经超过上限')
+
+        # 事务加行级锁
+        with transaction.atomic():
+            obj_list=self.request.user.customers.add(*models.Customer.objects.filter(id__in=ids)).select_for_update()
+
+
+            if apply_num == len(obj_list):
+                obj_list.update(consultant=self.request.user)
+            else:
+                return HttpResponse('请刷新页面,重新选择')
 
     def multi_pub(self):
         # 私户变公户
@@ -153,7 +174,7 @@ class ConsultRecord(View):
             all_consult_record = models.ConsultRecord.objects.filter(delete_status=False,consultant=request.user)
         else:
             all_consult_record = models.ConsultRecord.objects.filter(customer_id=customer_id,delete_status=False)
-        return render(request, 'crm/consult_record_list.html', {'all_consult_record': all_consult_record})
+        return render(request, 'crm/consultant/consult_record_list.html', {'all_consult_record': all_consult_record})
 
 
 def add_consult_record(request):
@@ -167,7 +188,7 @@ def add_consult_record(request):
             form_obj.save()
             return redirect(reverse('consult_record'))
 
-    return render(request, 'crm/add_consult_record.html', {'form_obj': form_obj})
+    return render(request, 'crm/consultant/add_consult_record.html', {'form_obj': form_obj})
 
 
 def edit_consult_record(request, edit_id):
@@ -180,7 +201,7 @@ def edit_consult_record(request, edit_id):
             form_obj.save()
             return redirect(reverse('consult_record',args=(0,)))
 
-    return render(request, 'crm/edit_consult_record.html', {'form_obj': form_obj})
+    return render(request, 'crm/consultant/edit_consult_record.html', {'form_obj': form_obj})
 
 #新增和修改跟进记录
 def consult_record(request, edit_id=None):
@@ -193,7 +214,7 @@ def consult_record(request, edit_id=None):
             form_obj.save()
             return redirect(reverse('consult_record',args=(0,)))
 
-    return render(request, 'crm/edit_consult_record.html', {'form_obj': form_obj})
+    return render(request, 'crm/consultant/edit_consult_record.html', {'form_obj': form_obj})
 # 增加客户
 # def add_customer(request):
 #     # 实例化一个空的form对象
@@ -217,7 +238,7 @@ class EnrollmentList(View):
         else:
             all_enrollment_record = models.Enrollment.objects.filter(customer_id=customer_id,delete_status=False)
         query_params = self.get_query_params()
-        return render(request, 'crm/enrollment_list.html', {'all_enrollment_record': all_enrollment_record,'query_params':query_params})
+        return render(request, 'crm/consultant/enrollment_list.html', {'all_enrollment_record': all_enrollment_record, 'query_params':query_params})
 
     #获取
     def get_query_params(self):
@@ -228,6 +249,7 @@ class EnrollmentList(View):
         query_params = qd.urlencode()
         # add_btn='<a href="{}?next={}" class="btn btn-primary btn-sm ">添加</a>'.format(reverse('add_customer'),url)
         return query_params
+
 
 # def enrollment(request,customer_id):
 #     obj = models.Enrollment(customer_id=customer_id)
@@ -275,7 +297,7 @@ def enrollment(request, customer_id=None,edit_id=None):
             else:
                 return redirect(reverse('my_customer'))
 
-    return render(request, 'crm/enrollment.html', {"form_obj": form_obj})
+    return render(request, 'crm/consultant/enrollment.html', {"form_obj": form_obj})
 
 # 增加客户
 def add_customer(request):
@@ -290,7 +312,7 @@ def add_customer(request):
             form_obj.save()
             return redirect(reverse('customer'))
 
-    return render(request, 'crm/add_customer.html', {"form_obj": form_obj})
+    return render(request, 'crm/consultant/add_customer.html', {"form_obj": form_obj})
 
 
 users = [{'name': 'alex{}'.format(i), 'pwd': 'alexsd{}'.format(i)} for i in range(1, 302)]
@@ -315,7 +337,7 @@ def edit_customer(request, edit_id):
             form_obj.save()
             return redirect(reverse('customer'))
 
-    return render(request, 'crm/edit_customer.html', {"form_obj": form_obj})
+    return render(request, 'crm/consultant/edit_customer.html', {"form_obj": form_obj})
 
 
 # 整合新增编辑客户
@@ -333,7 +355,7 @@ def customer(request, edit_id=None):
                 return redirect(next)
             return redirect(reverse('customer'))
 
-    return render(request, 'crm/customer.html', {"form_obj": form_obj, "edit_id": edit_id})
+    return render(request, 'crm/consultant/customer.html', {"form_obj": form_obj, "edit_id": edit_id})
 
 
 # 测试分页:分页之封装成类及使用

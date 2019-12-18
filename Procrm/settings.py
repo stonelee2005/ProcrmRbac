@@ -150,3 +150,5 @@ LOGGING = {
 }
 
 AUTH_USER_MODEL = 'crm.UserProfile'
+
+CUSTOMER_MAX_NUM=3
